@@ -21,7 +21,7 @@ export const Item = ({ item, onPressCheckout }: Props) => {
         </div>
       </div>
       <div
-        className="w-full h-10 flex justify-center items-center bg-blue-100 rounded-b-md cursor-pointer"
+        className="w-full h-10 flex justify-center items-center bg-blue-200 rounded-b-md cursor-pointer hover:bg-blue-100"
         onClick={() => onPressCheckout(item)}
       >
         Checkout
