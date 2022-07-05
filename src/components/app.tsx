@@ -1,5 +1,6 @@
 import { FunctionalComponent, h } from 'preact';
 import { IItem, Item } from './item';
+import { ConnectWallet } from './connect-wallet';
 
 const items = [
   { name: 'First Item', price: 1 },
@@ -27,9 +28,7 @@ const App: FunctionalComponent = () => {
             gopay
           </a>
         </div>
-        <div className="cursor-pointer w-64 h-16 rounded-md bg-gray-100 flex justify-center items-center">
-          Connect Wallet
-        </div>
+        <ConnectWallet />
       </div>
       <div className="w-full justify-center flex mt-12">
         <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-12 md:max-w-5xl lg:grid-cols-4 place-content-center">
