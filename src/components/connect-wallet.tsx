@@ -11,7 +11,7 @@ import { Dots } from 'react-activity';
 import 'react-activity/dist/library.css';
 import { useState } from 'preact/hooks';
 
-const CHAIN_ID = 1;
+const CHAIN_ID = 4;
 
 interface Props {
   onClick?: () => void;
@@ -21,7 +21,7 @@ interface Props {
 const Button = ({ onClick, children }: Props) => (
   <div
     onClick={onClick}
-    className="cursor-pointer w-48 h-16 rounded-md bg-gray-100 flex justify-center items-center text-2xl"
+    className="cursor-pointer w-48 h-16 rounded-md bg-gray-100 flex justify-center items-center text-xl"
   >
     {children}
   </div>
@@ -73,6 +73,6 @@ export const ConnectWallet = () => {
     );
   } else if (error) {
     alert(error);
-    return <Button>Connect</Button>;
   }
+  return <Button onClick={connect}>Connect</Button>;
 };

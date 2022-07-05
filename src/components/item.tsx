@@ -16,12 +16,12 @@ export const Item = ({ item, onPressCheckout }: Props) => {
       <div className="flex flex-row p-2">
         <div className="w-12 h-12 rounded-md bg-orange-300 mr-3" />
         <div>
-          <h1 className="text-lg">{item.name}</h1>
+          <h1 className="text-lg font-medium">{item.name}</h1>
           <p className="text-gray-400">${item.price}.00</p>
         </div>
       </div>
       <div
-        className="w-full h-10 flex justify-center items-center bg-blue-200 rounded-b-md cursor-pointer hover:bg-blue-100"
+        className="w-full h-10 flex justify-center items-center bg-blue-300 rounded-b-md cursor-pointer hover:bg-blue-200 font-semibold text-white"
         onClick={() => onPressCheckout(item)}
       >
         Checkout

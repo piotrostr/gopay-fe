@@ -1,6 +1,7 @@
 import { FunctionalComponent, h } from 'preact';
 import { IItem, Item } from './item';
 import { ConnectWallet } from './connect-wallet';
+import { Logo } from './logo';
 
 const items = [
   { name: 'First Item', price: 1 },
@@ -18,20 +19,15 @@ const App: FunctionalComponent = () => {
   }
 
   return (
-    <div className="w-full h-full p-10">
-      <div className="flex flex-row text-3xl mb-5 p-5 justify-between items-center">
-        <div>
-          <a
-            href="https://github.com/piotrostr/gopay"
-            className="text-teal-500 hover:underline"
-          >
-            gopay
-          </a>
+    <div className="w-full h-full p-2 sm:p-3 md:p-10">
+      <div className="flex flex-col text-center sm:flex-row mb-5 p-5 sm:justify-between items-center sm:text-start">
+        <div className="mb-5">
+          <Logo />
         </div>
         <ConnectWallet />
       </div>
       <div className="w-full justify-center flex mt-12">
-        <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-12 md:max-w-5xl lg:grid-cols-4 place-content-center">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 md:max-w-5xl lg:grid-cols-4 place-content-center">
           {items.map((item) => (
             <div className="flex justify-center">
               <Item item={item} onPressCheckout={onPressCheckout} />
