@@ -2,6 +2,15 @@
 
 This is a bootstrap for small React apps that might not require a full on NextJS.
 
+## required env
+
+```sh
+GOPAY_CONTRACT_ADDRESS
+INFURA_KEY
+GOPAY_API_URL (optional)
+CHAIN_ID (optional)
+```
+
 ## CLI Commands
 
 - `yarn`: Installs dependencies

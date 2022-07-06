@@ -16,7 +16,8 @@
       "react-dom": ["./node_modules/preact/compat"]
     },
     "skipLibCheck": true,
-    "types": ["cypress"]
+    "types": ["cypress"],
+    "resolveJsonModule": true
   },
   "include": ["src/**/*"]
 }
