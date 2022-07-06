@@ -18,7 +18,7 @@ module.exports = (config, env, helpers) => {
     );
 
     if (env.production) {
-      plugins.push(purgecss);
+      result.loader.options.postcssOptions.plugins.push(purgecss);
     }
   }
   return config;
