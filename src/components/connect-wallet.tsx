@@ -21,7 +21,7 @@ interface Props {
 const Button = ({ onClick, children }: Props) => (
   <div
     onClick={onClick}
-    className="cursor-pointer w-48 h-16 rounded-md bg-gray-100 flex justify-center items-center text-xl"
+    className="cursor-pointer w-48 h-16 rounded-md bg-gray-100 flex justify-center items-center text-xl dark:bg-slate-800 dark:text-white"
   >
     {children}
   </div>

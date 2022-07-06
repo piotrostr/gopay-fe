@@ -8,6 +8,6 @@ export const Logo = () => (
     >
       gopay
     </a>
-    <p className="mt-2">eth (rinkeby) payments made simple</p>
+    <p className="mt-2 dark:text-white">eth (rinkeby) payments made simple</p>
   </div>
 );

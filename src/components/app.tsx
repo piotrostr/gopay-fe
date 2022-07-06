@@ -1,7 +1,9 @@
 import { FunctionalComponent, h } from 'preact';
-import { IItem, Item } from './item';
+import { Item, IItem } from './item';
 import { ConnectWallet } from './connect-wallet';
 import { Logo } from './logo';
+import { useState } from 'preact/hooks';
+import { PayWindowModal } from './modal';
 
 const items = [
   { name: 'First Item', price: 1 },
@@ -14,12 +16,16 @@ const items = [
 ];
 
 const App: FunctionalComponent = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [selectedItem, setSelectedItem] = useState<IItem>(items[0]);
+
   function onPressCheckout(item: IItem) {
-    alert(`checking out with ${item.name}`);
+    setSelectedItem(item);
+    setIsOpen(true);
   }
 
   return (
-    <div className="w-full h-full p-2 sm:p-3 md:p-10">
+    <div className="w-full h-full p-2 sm:p-3 md:p-10 bg-white dark:bg-slate-900">
       <div className="flex flex-col text-center sm:flex-row mb-5 p-5 sm:justify-between items-center sm:text-start">
         <div className="mb-5">
           <Logo />
@@ -35,6 +41,11 @@ const App: FunctionalComponent = () => {
           ))}
         </div>
       </div>
+      <PayWindowModal
+        isOpen={isOpen}
+        item={selectedItem}
+        setIsOpen={setIsOpen}
+      />
     </div>
   );
 };
