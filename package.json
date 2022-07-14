@@ -23,6 +23,7 @@
   "dependencies": {
     "@web3-react/core": "^8.0.23-beta.0",
     "@web3-react/metamask": "^8.0.19-beta.0",
+    "dotenv-webpack": "^8.0.0",
     "ethers": "^5.6.9",
     "postcss-preset-env": "^7.7.2",
     "preact": "^10.3.1",

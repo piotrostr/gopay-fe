@@ -1,5 +1,6 @@
 import { FunctionalComponent, h } from 'preact';
 import { Item, IItem } from '../components/item';
+import { route } from 'preact-router';
 
 const items = [
   { name: 'First Item', price: 1 },
@@ -12,14 +13,15 @@ const items = [
 ];
 
 const Items: FunctionalComponent = () => {
-  function onPressCheckout(item: IItem) {}
-  // gotta use context here coz preact has no push method on router
+  function onPressCheckout(item: IItem) {
+    // route('/checkout');
+  }
   return (
     <div className="w-full justify-center flex mt-12">
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 md:max-w-5xl lg:grid-cols-4 place-content-center">
         {items.map((item) => (
           <div className="flex justify-center">
-            <Item item={item} onPressCheckout={onPressCheckout} />
+            <Item item={item} onPressCheckout={() => onPressCheckout(item)} />
           </div>
         ))}
       </div>

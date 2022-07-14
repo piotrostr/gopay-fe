@@ -1,4 +1,11 @@
+import Dotenv from 'dotenv-webpack';
+import webpack from 'webpack';
+
 module.exports = (config, env, helpers) => {
+  config.plugins.push(new Dotenv({ path: './.env' }));
+  config.plugins.push(
+    new webpack.ProvidePlugin({ process: 'process/browser' }),
+  );
   const purgecss = require('@fullhuman/postcss-purgecss')({
     content: [
       './src/**/*.html',

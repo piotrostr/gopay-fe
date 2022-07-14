@@ -7,7 +7,7 @@ import { Vault } from './Vault';
 import { useProvider, useChainId } from '../metamask';
 
 export const CONTRACT_ADDRESS = process.env.GOPAY_CONTRACT_ADDRESS || '';
-export const PROJECT_ID = process.env.INFURA_KEY;
+export const PROJECT_ID = process.env.PROJECT_ID;
 export const GOPAY_API_URL = process.env.GOPAY_API_URL || 'http://localhost';
 export const CHAIN_ID = process.env.CHAIN_ID || 4;
 
