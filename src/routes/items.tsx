@@ -1,6 +1,8 @@
 import { FunctionalComponent, h } from 'preact';
 import { Item, IItem } from '../components/item';
 import { route } from 'preact-router';
+import { useContext } from 'preact/hooks';
+import { AppContext } from '../context';
 
 const items = [
   { name: 'First Item', price: 1 },
@@ -13,9 +15,13 @@ const items = [
 ];
 
 const Items: FunctionalComponent = () => {
+  const { setItem } = useContext(AppContext);
+
   function onPressCheckout(item: IItem) {
-    // route('/checkout');
+    setItem(item);
+    route('/checkout');
   }
+
   return (
     <div className="w-full justify-center flex mt-12">
       <div className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 md:max-w-5xl lg:grid-cols-4 place-content-center">
